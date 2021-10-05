@@ -8,85 +8,155 @@ public class playerController : MonoBehaviour
     #region Private
     private Animator animator;
 
-    private bool isJumping = false, isMoving = false;
+    private bool /*isFallingBackDown = false,*/ isJumping = false;
+    private bool isMovingLeft = false, isMovingRight = false;
 
-    // 0 = Down, 1 = Left, 2 = Right, 3 = Up
-    private int currentDirection = -1;
+    // private float airTime = 2f;
+    private float jumpingVelocity = 1f;
+    private float movementVelocity = 1f;
 
-    private Vector3 movementVector;
+    private RaycastHit2D groundHit;
+
+    private Rigidbody2D rb;
+
+    private SpriteRenderer spriteRenderer;
+
+    // Velocity.x = Movement speed, Velocity.y = Gravity multiplier
+    private Vector2 velocity;
     #endregion
 
     #region Public
-    public bool isDiagonalMovementEnabled = false;
+    public bool isAbleToMove = true;
 
-    public float gravityMultiplier = .5f;
+    public Camera cam;
 
+    public int jumpHeight = 8;
     public int movementSpeed = 0;
     #endregion
 
-    void Start() { animator = GetComponent<Animator>(); }
+    void Start() 
+    { 
+        animator = GetComponent<Animator>();
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space)) { jump(); }
+        rb = GetComponent<Rigidbody2D>();
 
-        movement();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
+    private void FixedUpdate() { if (isAbleToMove) { movement(); } }
 
     private void jump()
     {
-        if (!isJumping) 
+        if (!isJumping)
         {
-            animator.SetFloat("gravityMultiplier", 1 + (1 - gravityMultiplier));
             animator.SetBool("isJumping", true);
 
             isJumping = true;
+
+            jumpingVelocity = jumpHeight;
+
+            movementVelocity = movementSpeed * .25f;
+
+            rb.drag = 0f;
+            rb.gravityScale = 1f;
+
+            rb.AddForce(new Vector2(0f, jumpingVelocity * 1.5f), ForceMode2D.Impulse);
+        }
+        else
+        {
+            if (groundHit.collider != null)
+            {
+                animator.SetBool("isJumping", false);
+
+                if(rb.gravityScale != 1f) { rb.gravityScale = 1f; }
+
+                isJumping = false;
+            }
+            else 
+            { 
+                if (rb.velocity.y > 0f) { rb.gravityScale = 1f; } 
+                else 
+                {
+                    movementVelocity = movementSpeed * 3f;
+
+                    rb.gravityScale = 2f; 
+                }
+            }
         }
     }
 
     private void movement()
     {
         float horizontalMovement = Input.GetAxis("Horizontal");
-        float verticalMovement = Input.GetAxis("Vertical");
 
-        if(!isJumping)
+        int layerMask = 1 << 8; layerMask = ~layerMask;
+
+        if (horizontalMovement != 0)
         {
-            if (horizontalMovement != 0 || verticalMovement != 0) { animator.SetBool("isMoving", true); }
+            if (horizontalMovement > 0)
+            {
+                if (isMovingLeft && rb.velocity.x < 0f) { if (!isJumping) { rb.drag = 8f; } }
+                else
+                {
+                    isMovingLeft = false;
+
+                    rb.drag = 0f;
+                }
+
+                isMovingRight = true;
+
+                spriteRenderer.flipX = false;
+            }
+            else if (horizontalMovement < 0)
+            {
+                if (isMovingRight && rb.velocity.x > 0f) { if (!isJumping) { rb.drag = 8f; } }
+                else
+                {
+                    isMovingRight = false;
+
+                    rb.drag = 0f;
+                }
+
+                isMovingLeft = true;
+
+                spriteRenderer.flipX = true;
+            }
+
+            // movementVelocity = movementSpeed * 1.5f;
+
+            if (!isJumping) { movementVelocity = movementSpeed * 1.5f; }
+        }
+        else
+        {
+            movementVelocity = 1f;
+
+            if (rb.velocity.x != 0f) { if (!isJumping) { rb.drag = 6f; } }
+            else { rb.drag = 0f; }
+        }
+
+        groundHit = Physics2D.Raycast(transform.position, Vector2.down, 2.75f, layerMask);
+
+        if (!isJumping)
+        {
+            if (groundHit.collider != null) { if (rb.gravityScale != 1f) { rb.gravityScale = 1f; } }
+            else { if (!isJumping) { rb.gravityScale = 4f; } }
+
+            if (horizontalMovement != 0) { animator.SetBool("isMoving", true); }
             else { animator.SetBool("isMoving", false); }
         }
 
-        if (!isDiagonalMovementEnabled) 
-        {
-            // Down
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) { movementVector = new Vector3(0f, verticalMovement, 0f); }
-            // Left
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) { movementVector = new Vector3(horizontalMovement, 0f, 0f); }
-            // Right
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) { movementVector = new Vector3(horizontalMovement, 0f, 0f); }
-            // Up
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) { movementVector = new Vector3(0f, verticalMovement, 0f); }
-        }
-        else { movementVector = new Vector3(horizontalMovement, verticalMovement, 0f); }
+        if ((groundHit.collider != null && (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Space))) || isJumping) { jump(); }
 
-        if (!isJumping) { movementVector = Vector3.ClampMagnitude(movementVector * ((float)movementSpeed * Time.deltaTime), 1f); }
-        else { movementVector = Vector3.ClampMagnitude(movementVector * (((float)movementSpeed * Time.deltaTime) * gravityMultiplier), 1f); }
+        rb.AddForce(new Vector2(horizontalMovement * movementVelocity, 0f) * Time.fixedDeltaTime, ForceMode2D.Impulse);
 
-        transform.position += movementVector;
+        updateCameraPosition();
     }
 
-    public void endAnimation(string _case) { switch (_case) 
-        { 
-            case "Jump":
-                animator.SetFloat("gravityMultiplier", 1);
-                animator.SetBool("isJumping", false);
+    private void updateCameraPosition() { cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z); }
 
-                isJumping = false;
-                break; 
-        } 
-    }
+    public void updateVelocityY(int _velocityY) { velocity.y = _velocityY; }
 
     // User Interface Functions
-    public void disableOrEnableDiagonalMovement(bool _value) { isDiagonalMovementEnabled = _value; }
-    public void updateGravityMultiplier(TMP_InputField _inputField) { if (_inputField.text != "" && float.Parse(_inputField.text) >= 0f && float.Parse(_inputField.text) <= 1f) { gravityMultiplier = float.Parse(_inputField.text); } }
+    // public void updateGravityMultiplier(TMP_InputField _inputField) { if (_inputField.text != "" && float.Parse(_inputField.text) >= 0f && float.Parse(_inputField.text) <= 1f) { gravityMultiplier = float.Parse(_inputField.text); } }
     public void updateMovementSpeed(TMP_InputField _inputField) { if (_inputField.text != "" && int.Parse(_inputField.text) >= 0 && int.Parse(_inputField.text) <= 16) { movementSpeed = int.Parse(_inputField.text); } }
 }

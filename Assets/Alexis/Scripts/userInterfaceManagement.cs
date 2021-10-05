@@ -10,7 +10,14 @@ public class userInterfaceManagement : MonoBehaviour
     public bool isBotanicalDexTabOpened = false, isJournalTabOpened = false;
     public bool isBotanicalDexAndJournalSectionOpened = false;
 
+    public dialogueScript selectedDialogueScript;
+
+    public dialogueManagement referenceToDialogueManagement;
+
     public GameObject botanicalDexInformationalUI, botanicalDexScrollArea;
+    public GameObject dialogueUserInterface;
+
+    public TMP_Text dialogueText;
     #endregion
 
     void Start() 
@@ -19,7 +26,9 @@ public class userInterfaceManagement : MonoBehaviour
         botanicalDexInformationalUI.transform.GetChild(2).gameObject.SetActive(false);
         botanicalDexInformationalUI.transform.GetChild(3).gameObject.SetActive(false);
 
-        botanicalDexScrollArea.SetActive(false); 
+        botanicalDexScrollArea.SetActive(false);
+
+        // displayDialogueUserInterface(selectedDialogueScript);
     }
 
     public void displayTab(int _selectedTab)
@@ -53,6 +62,15 @@ public class userInterfaceManagement : MonoBehaviour
                 // Enable the Journal ScrollArea here when created
                 break;
         }
+    }
+
+    public void displayDialogueUserInterface(dialogueScript _dialogue)
+    {
+        dialogueUserInterface.SetActive(true);
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().isAbleToMove = false;
+
+        StartCoroutine(referenceToDialogueManagement.stepThroughDialogue(_dialogue));        
     }
 
     public void updateItemUserInterface(bool _value, string _case) { switch (_case) { case "Collectable": transform.GetChild(4).gameObject.SetActive(_value); break; } }
