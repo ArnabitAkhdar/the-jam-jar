@@ -10,6 +10,10 @@ public class dialogueScript : MonoBehaviour
 
     public dialogueResponse[] responses;
 
+    public bool isASoloConversation = true;
+
+    public string[] characterNames;
+
     void Start() { }
 
     void Update() { }

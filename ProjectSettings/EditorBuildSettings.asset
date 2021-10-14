@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Alexis/Scenes/SampleScene.unity
+    path: Assets/Alexis/Scenes/MainMenu.unity
+    guid: 531952970c82a6f45a0f35fa9495cf3a
+  - enabled: 1
+    path: Assets/Alexis/Scenes/Level 1 - Homestead 1.unity
+    guid: b415e1ddfbedc514ba11bb36bc3c98b7
+  - enabled: 1
+    path: Assets/Alexis/Scenes/Level 2 - The Outside World.unity
+    guid: b788a2956e92f5247b3c4bf29fef4eb8
+  - enabled: 1
+    path: Assets/Alexis/Scenes/Level 3 - Foreshadowing.unity
     guid: 72140dfe729bbe442a22e13fd0a1ef1a
+  - enabled: 1
+    path: Assets/Alexis/Scenes/Level 4 - Rusty Building.unity
+    guid: 39f9c2353755b7543852a08bd07fcee1
+  - enabled: 1
+    path: Assets/Alexis/Scenes/End - Seed Vault.unity
+    guid: 009975488c472bb43a3fd8a297ba7931
   m_configObjects: {}

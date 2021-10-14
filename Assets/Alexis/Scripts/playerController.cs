@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
     #region Private
     private Animator animator;
 
+    private bool hasStoredRigidbody = false;
     private bool /*isFallingBackDown = false,*/ isJumping = false;
     private bool isMovingLeft = false, isMovingRight = false;
 
     // private float airTime = 2f;
     private float jumpingVelocity = 1f;
     private float movementVelocity = 1f;
+    private float storedRbDrag = 0f, storedRbGravityScale = 0f;
 
     private RaycastHit2D groundHit;
 
@@ -22,7 +25,8 @@ public class playerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     // Velocity.x = Movement speed, Velocity.y = Gravity multiplier
-    private Vector2 velocity;
+    private Vector2 storedRbVelocity, velocity;
+    private Vector2 updatedCameraPosition;
     #endregion
 
     #region Public
@@ -32,18 +36,61 @@ public class playerController : MonoBehaviour
 
     public int jumpHeight = 8;
     public int movementSpeed = 0;
+
+    public LayerMask layerMask;
+
+    public Vector2 cameraBoundX, cameraBoundY;
     #endregion
 
     void Start() 
     { 
         animator = GetComponent<Animator>();
+        animator.enabled = false;
 
         rb = GetComponent<Rigidbody2D>();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        updateCameraPosition();
     }
 
-    private void FixedUpdate() { if (isAbleToMove) { movement(); } }
+    private void FixedUpdate() 
+    { 
+        if (!isAbleToMove)
+        {
+            if(!hasStoredRigidbody)
+            {
+                animator.enabled = false;
+
+                hasStoredRigidbody = true;
+
+                storedRbDrag = rb.drag;
+                storedRbGravityScale = rb.gravityScale;
+                storedRbVelocity = rb.velocity;
+
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+        }
+        else 
+        {
+            if (!animator.enabled) { animator.enabled = true; }
+
+            if(hasStoredRigidbody)
+            {
+                hasStoredRigidbody = false;
+                
+                rb.constraints = ~RigidbodyConstraints2D.FreezePosition;
+                rb.drag = storedRbDrag;
+                rb.gravityScale = storedRbGravityScale;
+                rb.velocity = storedRbVelocity;
+            }
+            
+            movement(); 
+        }
+    
+        if(transform.position.y <= -50f) { SceneManager.LoadScene(1); }
+    }
 
     private void jump()
     {
@@ -55,8 +102,6 @@ public class playerController : MonoBehaviour
 
             jumpingVelocity = jumpHeight;
 
-            movementVelocity = movementSpeed * .25f;
-
             rb.drag = 0f;
             rb.gravityScale = 1f;
 
@@ -64,23 +109,21 @@ public class playerController : MonoBehaviour
         }
         else
         {
-            if (groundHit.collider != null)
+            if (rb.velocity.y > 0f) { rb.gravityScale = 1f; }
+            else
             {
-                animator.SetBool("isJumping", false);
-
-                if(rb.gravityScale != 1f) { rb.gravityScale = 1f; }
-
-                isJumping = false;
-            }
-            else 
-            { 
-                if (rb.velocity.y > 0f) { rb.gravityScale = 1f; } 
-                else 
+                if (groundHit.collider != null)
                 {
-                    movementVelocity = movementSpeed * 3f;
+                    animator.SetBool("isJumping", false);
 
-                    rb.gravityScale = 2f; 
+                    if (rb.gravityScale != 1f) { rb.gravityScale = 1f; }
+
+                    isJumping = false;
                 }
+
+                movementVelocity = movementSpeed / 4f;
+
+                rb.gravityScale = 3f;
             }
         }
     }
@@ -88,8 +131,6 @@ public class playerController : MonoBehaviour
     private void movement()
     {
         float horizontalMovement = Input.GetAxis("Horizontal");
-
-        int layerMask = 1 << 8; layerMask = ~layerMask;
 
         if (horizontalMovement != 0)
         {
@@ -122,9 +163,7 @@ public class playerController : MonoBehaviour
                 spriteRenderer.flipX = true;
             }
 
-            // movementVelocity = movementSpeed * 1.5f;
-
-            if (!isJumping) { movementVelocity = movementSpeed * 1.5f; }
+            movementVelocity = movementSpeed;
         }
         else
         {
@@ -134,15 +173,29 @@ public class playerController : MonoBehaviour
             else { rb.drag = 0f; }
         }
 
-        groundHit = Physics2D.Raycast(transform.position, Vector2.down, 2.75f, layerMask);
+        groundHit = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, layerMask);
 
         if (!isJumping)
         {
-            if (groundHit.collider != null) { if (rb.gravityScale != 1f) { rb.gravityScale = 1f; } }
-            else { if (!isJumping) { rb.gravityScale = 4f; } }
+            if (groundHit.collider != null) { /*Debug.Log("Hit!");*/ if (rb.gravityScale != 1f) { rb.gravityScale = 1f; } }
+            else { /*Debug.Log("No Hit!");*/ if (!isJumping) { rb.gravityScale = 4f; } }
 
-            if (horizontalMovement != 0) { animator.SetBool("isMoving", true); }
-            else { animator.SetBool("isMoving", false); }
+            if (horizontalMovement != 0) 
+            {
+                if (rb.velocity.x > 5f || rb.velocity.x < -5f) 
+                { 
+                    animator.SetBool("isRunning", true);
+
+                    if (animator.GetBool("isWalking")) { animator.SetBool("isWalking", false); }
+                }
+                else 
+                {
+                    animator.SetBool("isWalking", true);
+
+                    if (animator.GetBool("isRunning")) { animator.SetBool("isRunning", false); }
+                }
+            }
+            else { animator.SetBool("isRunning", false); animator.SetBool("isWalking", false); }
         }
 
         if ((groundHit.collider != null && (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Space))) || isJumping) { jump(); }
@@ -152,7 +205,20 @@ public class playerController : MonoBehaviour
         updateCameraPosition();
     }
 
-    private void updateCameraPosition() { cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z); }
+    private void updateCameraPosition() 
+    {
+        cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z);
+
+        if (cam.transform.position.x >= cameraBoundX.y) { updatedCameraPosition.x = cameraBoundX.y; }
+        else if (cam.transform.position.x <= cameraBoundX.x) { updatedCameraPosition.x = cameraBoundX.x; }
+        else { updatedCameraPosition.x = transform.position.x; }
+
+        if (cam.transform.position.y >= cameraBoundY.y) { updatedCameraPosition.y = cameraBoundY.y; }
+        else if (cam.transform.position.y <= cameraBoundY.x) { updatedCameraPosition.y = cameraBoundY.x; }
+        else { updatedCameraPosition.y = transform.position.y; }
+
+        cam.transform.position = new Vector3(updatedCameraPosition.x, updatedCameraPosition.y, cam.transform.position.z); 
+    }
 
     public void updateVelocityY(int _velocityY) { velocity.y = _velocityY; }
 

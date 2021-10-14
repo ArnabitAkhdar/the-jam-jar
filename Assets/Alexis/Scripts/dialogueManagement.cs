@@ -8,13 +8,15 @@ public class dialogueManagement : MonoBehaviour
     #region Private
     private dialogueResponseHandler referenceToDialogueResponseHandler;
 
-    private dialogueScript referenceToSelectedDialogueScript;
-
     private userInterfaceManagement referenceToUserInterfaceManagement;
     #endregion
 
     #region Public
+    public dialogueScript currentDialogueScript;
+
     public float charBufferSpeed = 0f;
+
+    public int atDialogueString = -1;
     #endregion
 
     void Start()
@@ -23,14 +25,7 @@ public class dialogueManagement : MonoBehaviour
 
         referenceToDialogueResponseHandler = GetComponent<dialogueResponseHandler>();
 
-        referenceToSelectedDialogueScript = GetComponent<dialogueScript>();
-
         referenceToUserInterfaceManagement = GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>();
-    }
-
-    void Update()
-    {
-        
     }
 
     private IEnumerator typeText(string _textToType, TMP_Text _textLabel)
@@ -58,6 +53,8 @@ public class dialogueManagement : MonoBehaviour
 
     private void closeDialogueScript(dialogueScript _dialogue)
     {
+        currentDialogueScript = null;
+
         referenceToUserInterfaceManagement.dialogueUserInterface.SetActive(false);
 
         referenceToUserInterfaceManagement.dialogueText.text = string.Empty;
@@ -69,11 +66,17 @@ public class dialogueManagement : MonoBehaviour
 
     public IEnumerator stepThroughDialogue(dialogueScript _dialogue)
     {
+        currentDialogueScript = _dialogue;
+
         referenceToUserInterfaceManagement = GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>();
 
         for (int indexCounter = 0; indexCounter < _dialogue.dialogue.Length; indexCounter++)
         {
+            atDialogueString = indexCounter;
+
             string dialogue = _dialogue.dialogue[indexCounter];
+
+            if (!_dialogue.isASoloConversation) { referenceToUserInterfaceManagement.nameText.text = _dialogue.characterNames[indexCounter]; }
 
             yield return run(dialogue, referenceToUserInterfaceManagement.dialogueText);
 
