@@ -30,6 +30,7 @@ public class sceneTransition : MonoBehaviour
     private void Start() 
     {
         if (SceneManager.GetActiveScene().name != "MainMenu") { beginFadeOut = true; }
+        else { PlayerPrefs.DeleteAll(); }
 
         panel.gameObject.SetActive(false); 
     }
@@ -41,7 +42,7 @@ public class sceneTransition : MonoBehaviour
         if (beginFadeOut && SceneManager.GetActiveScene().name != "MainMenu") { fadeOut(); } 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) { if (collision.CompareTag("Player") && overrideAndLetPlayerTriggerTransition) { fadeIn(transitionToScene); } }
+    private void OnTriggerEnter2D(Collider2D collision) { if (collision.CompareTag("Player") && overrideAndLetPlayerTriggerTransition) { transitionScene(transitionToScene); } }
 
     public void fadeIn(int _sceneBuildIndex)
     {
@@ -107,5 +108,12 @@ public class sceneTransition : MonoBehaviour
                 panel.gameObject.SetActive(false);
             }
         }
+    }
+
+    public void transitionScene(int _sceneBuildIndex) 
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().saveDexJournalInformation();
+
+        SceneManager.LoadScene(_sceneBuildIndex); 
     }
 }

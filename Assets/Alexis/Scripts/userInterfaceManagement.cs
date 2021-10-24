@@ -139,39 +139,42 @@ public class userInterfaceManagement : MonoBehaviour
     public void updateDexUI(int _index)
     {
         // Item Description
-        botanicalDex.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
+        botanicalDex.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
 
         // Item Image
-        botanicalDex.transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(true);
+        botanicalDex.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
 
         // Item Name
-        botanicalDex.transform.GetChild(0).transform.GetChild(3).gameObject.SetActive(true);
+        botanicalDex.transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(true);
         
         if(_index >= GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().dexEntries.Count)
         {
-            botanicalDex.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "?";
+            botanicalDex.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
 
-            botanicalDex.transform.GetChild(0).transform.GetChild(2).GetComponent<Image>().sprite = null;
+            botanicalDex.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = null;
+            botanicalDex.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().enabled = false;
 
-            botanicalDex.transform.GetChild(0).transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "???";
+            botanicalDex.transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "???";
         }
         else
         {
             if (!GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().dexEntries[_index].entryCollected)
             {
-                botanicalDex.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "?";
+                botanicalDex.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
 
-                botanicalDex.transform.GetChild(0).transform.GetChild(2).GetComponent<Image>().sprite = null;
+                botanicalDex.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = null;
+                botanicalDex.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().enabled = false;
 
-                botanicalDex.transform.GetChild(0).transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "???";
+                botanicalDex.transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "???";
             }
             else
             {
-                botanicalDex.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().dexEntries[_index].entryDescription;
+                botanicalDex.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().dexEntries[_index].entryDescription;
 
-                botanicalDex.transform.GetChild(0).transform.GetChild(2).GetComponent<Image>().sprite = GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().dexEntries[_index].entrySprite;
+                botanicalDex.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().enabled = true;
+                botanicalDex.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().dexEntries[_index].entrySprite;
 
-                botanicalDex.transform.GetChild(0).transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().dexEntries[_index].entryName;
+                botanicalDex.transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().dexEntries[_index].entryName;
             }
         }
     }
@@ -179,13 +182,13 @@ public class userInterfaceManagement : MonoBehaviour
     public void updateJournalUI(int _index)
     {
         // Description
-        journal.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
+        journal.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
 
-        if (_index >= GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().journalEntries.Count) { journal.transform.GetChild(0).transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = "???"; }
+        if (_index >= GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().journalEntries.Count) { journal.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "???"; }
         else
         {
-            if (!GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().journalEntries[_index].entryCollected) { journal.transform.GetChild(0).transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = "???"; }
-            else { journal.transform.GetChild(0).transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().journalEntries[_index].entryDescription; }
+            if (!GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().journalEntries[_index].entryCollected) { journal.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "???"; }
+            else { journal.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag("Player").GetComponent<botanicalDexJournal>().journalEntries[_index].entryDescription; }
         }
     }
 }

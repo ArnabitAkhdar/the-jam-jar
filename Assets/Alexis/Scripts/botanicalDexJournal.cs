@@ -35,6 +35,8 @@ public class journalEntry
 
 public class botanicalDexJournal : MonoBehaviour
 {
+    private bool hasUnlockedAllDexEntries = false;
+
     public int ediblesPickedUp = 0, flowersPickedUp = 0, herbsPickedUp = 0;
 
     public List<Button> dexEntryButtons = new List<Button>();
@@ -42,6 +44,47 @@ public class botanicalDexJournal : MonoBehaviour
 
     public List<dexEntry> dexEntries = new List<dexEntry>();
     public List<journalEntry> journalEntries = new List<journalEntry>();
+
+    void Update()
+    {
+        if(!hasUnlockedAllDexEntries && Input.GetKey(KeyCode.M) && Input.GetKey(KeyCode.T))
+        {
+            foreach(dexEntry _dexEntry in dexEntries) 
+            { 
+                _dexEntry.entryCollected = true;
+
+                updateDex(_dexEntry.dexNumber);
+
+                GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().updateDexUI(_dexEntry.dexNumber);
+            }
+
+            hasUnlockedAllDexEntries = true;
+        }
+    }
+
+    public void loadDexJournalInformation()
+    {
+        for (int indexCounter = 0; indexCounter < dexEntries.Count; indexCounter++) 
+        {
+            if(PlayerPrefs.GetInt("dexEntries" + indexCounter) != 0) 
+            { 
+                dexEntries[indexCounter].entryCollected = true;
+
+                GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().updateDexUI(dexEntries[indexCounter].dexNumber);
+
+                updateDex(dexEntries[indexCounter].dexNumber);
+            }
+        }
+    }
+
+    public void saveDexJournalInformation()
+    {
+        for(int indexCounter = 0; indexCounter < dexEntries.Count; indexCounter++)
+        {
+            if (!dexEntries[indexCounter].entryCollected) { PlayerPrefs.SetInt("dexEntries" + indexCounter, 0); }
+            else { PlayerPrefs.SetInt("dexEntries" + indexCounter, 1); }
+        }
+    }
 
     public void updateDex(int _dexEntryIndex)
     {
@@ -53,7 +96,7 @@ public class botanicalDexJournal : MonoBehaviour
             {
                 //_journalEntry.entryCollected = true;
 
-                if (_dexEntryIndex <= 9) { dexEntryButtons[indexCounter].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "00" + _dexEntry.dexNumber + " - " + _dexEntry.entryName; }
+                dexEntryButtons[indexCounter].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = _dexEntry.dexNumber + " - " + _dexEntry.entryName;
             }
 
             indexCounter += 1;
@@ -70,7 +113,7 @@ public class botanicalDexJournal : MonoBehaviour
             {
                 //_journalEntry.entryCollected = true;
 
-                if (_journalEntryIndex <= 9) { journalEntryButtons[indexCounter].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "00" + _journalEntry.journalEntryNumber + " - " + _journalEntry.entryName; }
+                journalEntryButtons[indexCounter].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = _journalEntry.journalEntryNumber + " - " + _journalEntry.entryName;
             }
 
             indexCounter += 1;

@@ -47,6 +47,8 @@ public class playerController : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.enabled = false;
 
+        GetComponent<botanicalDexJournal>().loadDexJournalInformation();
+
         rb = GetComponent<Rigidbody2D>();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -178,7 +180,7 @@ public class playerController : MonoBehaviour
         if (!isJumping)
         {
             if (groundHit.collider != null) { /*Debug.Log("Hit!");*/ if (rb.gravityScale != 1f) { rb.gravityScale = 1f; } }
-            else { /*Debug.Log("No Hit!");*/ if (!isJumping) { rb.gravityScale = 4f; } }
+            else { /*Debug.Log("No Hit!");*/ if (!isJumping) { rb.gravityScale = 2f; } }
 
             if (horizontalMovement != 0) 
             {

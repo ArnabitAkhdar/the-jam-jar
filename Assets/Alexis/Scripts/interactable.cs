@@ -53,9 +53,12 @@ public class interactable : MonoBehaviour
 
     void Start() 
     { 
-        boxCollider2D = gameObject.AddComponent<BoxCollider2D>();
-        boxCollider2D.isTrigger = true;
-        boxCollider2D.size *= 2;
+        if(!isAPlant)
+        {
+            boxCollider2D = gameObject.AddComponent<BoxCollider2D>();
+            boxCollider2D.isTrigger = true;
+            boxCollider2D.size *= 2;
+        }
 
         referenceToPlayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>();
 

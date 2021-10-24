@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class mainMenuUserInterfaceManagement : MonoBehaviour
 {
-    public AudioMixer musicMixer, soundMixer;
+    public AudioMixer soundMixer;
 
     // Button Functions
     public void backButton(GameObject _gameObject) { _gameObject.SetActive(false); }
@@ -18,8 +18,6 @@ public class mainMenuUserInterfaceManagement : MonoBehaviour
     // public void loadGame() { }
 
     public void newGame() { SceneManager.LoadScene(1); }
-
-    public void setMusicLevel(float _value) { musicMixer.SetFloat("musicVolume", Mathf.Log10(_value) * 20); }
 
     public void setSoundLevel(float _value) { soundMixer.SetFloat("soundVolume", Mathf.Log10(_value) * 20); }
 }
