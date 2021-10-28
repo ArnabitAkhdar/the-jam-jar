@@ -22,12 +22,16 @@ Credits:
   - Twitter: [CaffeineHanine](https://twitter.com/CaffeineHanine)
 
 * **Kimimeow** - Game and Narrative Designer
+  - Twitter: [BraveSnowGame](https://twitter.com/BraveSnowGame)
 
 * **Les (XLEHX)** - Character Designer, UI & Concept Artist
+  - Portfolio: [https://lehcharacters.weebly.com](https://lehcharacters.weebly.com)
+  - Twitter: [_XLEHX_](https://twitter.com/_XLEHX_)
 
 * **MellBerri** - Background Artist
 
 * **Nils Kwiatowski** - Music
+  - SoundCloud: [nilskcomposer](https://soundcloud.com/nilskcomposer)
 
 ![alt text](https://img.itch.zone/aW1hZ2UvMTI0NDE2OC83Mjc2NjczLnBuZw==/original/F8A4N6.png "Day of Juniper Screenshot")
 
