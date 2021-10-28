@@ -120,16 +120,14 @@ MonoBehaviour:
     dexNumber: 2
     entrySprite: {fileID: 21300000, guid: 0f0f406871d704646a449f33f48a4975, type: 3}
     entryDescription: 'Three types of cherries are mainly grown for their fruit:
-      sweet cherries, sour cherries, and, grown to a much smaller extent, the dukes,
-      which are crosses of sweet and sour cherries.'
+      sweet cherries, sour cherries, and, grown to a much smaller extent, the dukes.'
     entryName: Cherry Blossom
   - entryCollected: 0
     dexNumber: 3
     entrySprite: {fileID: 21300000, guid: 6703f8f391866124bba5f5a73a372a0b, type: 3}
     entryDescription: "Weedy perennial herb of the genus Taraxacum of the family
-      Asteraceae, native to Eurasia (the largest continental area on Earth, comprising
-      all of Europe and Asia). but widespread throughout much of temperate North
-      America. \r\n"
+      Asteraceae, native to Eurasia. but widespread throughout much of temperate
+      North America. \r\n"
     entryName: Dandelion
   - entryCollected: 0
     dexNumber: 4
@@ -159,31 +157,28 @@ MonoBehaviour:
   - entryCollected: 0
     dexNumber: 8
     entrySprite: {fileID: 21300000, guid: 0f979e4117432ba4487f7410fcbf4f2c, type: 3}
-    entryDescription: (Genus Tagetes), genus of about 50 species of annual herbs
-      of the aster family (Asteraceae), native to southwestern North America, tropical
+    entryDescription: (Genus Tagetes), native to southwestern North America, tropical
       America, and South America. The name marigold also refers to the pot marigold
     entryName: Marigold
   - entryCollected: 0
     dexNumber: 9
     entrySprite: {fileID: 21300000, guid: 34ed82e02463e314d971dea0c6bdf310, type: 3}
-    entryDescription: Convolvulaceae, the morning glory family of flowering plants
-      (order Solanales), which includes some 59 genera and about 1,600 species. The
-      family is widespread in both tropical and temperate areas, and its members
-      are widely cultivated for their colorful funnel-shaped flowers.
+    entryDescription: Widespread in both tropical and temperate areas, cultivated
+      for their colorful funnel-shaped flowers. Includes some 59 genera and about
+      1,600 species.
     entryName: Morningglory
   - entryCollected: 0
     dexNumber: 10
     entrySprite: {fileID: 21300000, guid: 537db58aa1ab2b84b888bfecbfb3ce64, type: 3}
-    entryDescription: several popular cultivated violets of the genus Viola in the
-      family Violaceae. Pansies have been grown for so long a period under such diverse
-      conditions and in such a variety of forms that their origin is uncertain
+    entryDescription: Popular cultivated violets of the genus Viola in the family
+      Violaceae. Have grown for so long under such diverse conditions and variety
+      of forms that their origin is uncertain.
     entryName: Pansies
   - entryCollected: 0
     dexNumber: 11
     entrySprite: {fileID: 21300000, guid: 9d88e29a36b377546804a0814f22b503, type: 3}
-    entryDescription: Several flowering plants of the poppy family (Papaveraceae),
-      especially species of the genus Papaver. Most poppies are found in the Northern
-      Hemisphere, and several species of poppies are cultivated as garden ornamentals.
+    entryDescription: Most poppies are found in the Northern Hemisphere, and several
+      species of poppies are cultivated as garden ornamentals.
     entryName: Poppy
   - entryCollected: 0
     dexNumber: 12
@@ -195,18 +190,16 @@ MonoBehaviour:
   - entryCollected: 0
     dexNumber: 13
     entrySprite: {fileID: 21300000, guid: 6165c03a1b460d243ad626cd035c9993, type: 3}
-    entryDescription: Also called common sage or garden sage, aromatic herb of the
-      mint family (Lamiaceae) cultivated for its pungent leaves. Sage is native to
-      the Mediterranean region and is used fresh or dried as a flavouring in many
-      foods.
+    entryDescription: Aromatic herb of the mint family (Lamiaceae) cultivated for
+      its pungent leaves. Native to the Mediterranean region and used fresh/dried
+      as flavouring in food.
     entryName: Sage
   - entryCollected: 0
     dexNumber: 14
     entrySprite: {fileID: 21300000, guid: bdb8912d8b130b24b82eb03632daa839, type: 3}
-    entryDescription: 20 species of flowering plants in the rose family (Rosaceae)
-      and their edible fruit. The fruits are rich in vitamin C and are commonly eaten
-      fresh as a dessert fruit, are used as a pastry or pie filling, and may be preserved
-      in many ways.
+    entryDescription: Commonly eaten fresh as a dessert fruit, are used as a pastry
+      or pie filling, and may be preserved in many ways. The fruits are rich in vitamin
+      C.
     entryName: Strawberry
   - entryCollected: 0
     dexNumber: 15
@@ -232,17 +225,15 @@ MonoBehaviour:
   - entryCollected: 0
     dexNumber: 18
     entrySprite: {fileID: 21300000, guid: d31156132c9d3714aa4a38485ea17740, type: 3}
-    entryDescription: (Nasturtium officinale), also called cress, perennial aquatic
-      plant of the mustard family (Brassicaceae), native to Eurasia and naturalized
-      throughout North America. Watercress thrives in cool flowing streams, where
-      it grows submerged, floating on the water, or spread over mud surfaces.
+    entryDescription: Native to Eurasia and naturalized throughout North America.
+      Thrives in cool flowing streams, can grows submerged, floating on the water,
+      or spread over mud surfaces.
     entryName: Watercrest
   - entryCollected: 0
     dexNumber: 19
     entrySprite: {fileID: 21300000, guid: 55f21b77f45049645988f1b58791b3c6, type: 3}
-    entryDescription: family Nymphaeaceae), family of 58 species in 3 genera of freshwater
-      flowering plants (order Nymphaeales), native to the temperate and tropical
-      parts of the world.
+    entryDescription: Family of 58 species in 3 genera of freshwater flowering plants
+      (order Nymphaeales), native to the temperate and tropical parts of the world.
     entryName: Waterlily
   journalEntries:
   - entryCollected: 0

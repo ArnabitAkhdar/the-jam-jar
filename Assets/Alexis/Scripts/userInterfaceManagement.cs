@@ -52,12 +52,16 @@ public class userInterfaceManagement : MonoBehaviour
     {
         if(!_value)
         {
+            isBotanicalDexAndJournalSectionOpened = false;
+
             transform.GetChild(0).gameObject.SetActive(_value);
 
             transform.GetChild(1).gameObject.SetActive(true);
         }
         else
         {
+            isBotanicalDexAndJournalSectionOpened = true;
+
             transform.GetChild(0).gameObject.SetActive(_value);
 
             if (previousTab != null) { previousTab.SetActive(_value); }
@@ -116,6 +120,14 @@ public class userInterfaceManagement : MonoBehaviour
 
             nameText.gameObject.SetActive(false);
         }
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().isAbleToMove = false;
+
+        StartCoroutine(referenceToDialogueManagement.stepThroughDialogue(_dialogue));
+    }
+    public void displayDialogueUserInterface01(dialogueScript _dialogue)
+    {
+        dialogueUserInterface.SetActive(true);
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().isAbleToMove = false;
 

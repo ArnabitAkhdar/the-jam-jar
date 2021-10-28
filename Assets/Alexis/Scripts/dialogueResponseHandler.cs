@@ -10,6 +10,8 @@ public class dialogueResponseHandler : MonoBehaviour
 
     private userInterfaceManagement referenceToUserInterfaceManagement;
 
+    public bool hasShownResponses = false;
+
     public RectTransform responseBox;
     public RectTransform responseButtonTemplate;
     public RectTransform responseContainer;
@@ -18,6 +20,8 @@ public class dialogueResponseHandler : MonoBehaviour
 
     private void onPickedResponse(dialogueResponse _response)
     {
+        hasShownResponses = false;
+
         responseBox.gameObject.SetActive(false);
 
         foreach (GameObject _button in tempResponseButtons) { Destroy(_button); }
@@ -30,6 +34,8 @@ public class dialogueResponseHandler : MonoBehaviour
     public void showResponses(dialogueResponse[] _responses)
     {
         float responseBoxHeight = 0;
+
+        hasShownResponses = true;
 
         foreach (dialogueResponse _response in _responses)
         {

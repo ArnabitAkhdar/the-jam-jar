@@ -143,10 +143,10 @@ public class interactable : MonoBehaviour
             if (canPickUp) 
             {
                 if(isAPlant)
-                {
-                    if (isEdible) { referenceToPlayerController.GetComponent<botanicalDexJournal>().ediblesPickedUp += 1; }
-                    if (isFlower) { referenceToPlayerController.GetComponent<botanicalDexJournal>().flowersPickedUp += 1; }
-                    if (isHerb) { referenceToPlayerController.GetComponent<botanicalDexJournal>().herbsPickedUp += 1; }
+                {      
+                    if (isEdible) { PlayerPrefs.SetInt("ediblesPickedUp", PlayerPrefs.GetInt("ediblesPickedUp") + 1); referenceToPlayerController.GetComponent<botanicalDexJournal>().ediblesPickedUp += 1; }
+                    if (isFlower) { PlayerPrefs.SetInt("flowersPickedUp", PlayerPrefs.GetInt("flowersPickedUp") + 1); referenceToPlayerController.GetComponent<botanicalDexJournal>().flowersPickedUp += 1; }
+                    if (isHerb) { PlayerPrefs.SetInt("herbsPickedUp", PlayerPrefs.GetInt("herbsPickedUp") + 1); referenceToPlayerController.GetComponent<botanicalDexJournal>().herbsPickedUp += 1; }
                 }
                 
                 gameObject.SetActive(false); 

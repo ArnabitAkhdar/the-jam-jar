@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Alexis/Scenes/MainMenu.unity
     guid: 531952970c82a6f45a0f35fa9495cf3a
   - enabled: 1
-    path: Assets/Alexis/Scenes/Level 1 - Homestead 1.unity
+    path: Assets/Alexis/Scenes/Level 1 - Homestead.unity
     guid: b415e1ddfbedc514ba11bb36bc3c98b7
   - enabled: 1
     path: Assets/Alexis/Scenes/Level 2 - The Outside World.unity

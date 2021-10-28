@@ -83,7 +83,7 @@ MonoBehaviour:
   displayDuringDialogue: 0
   isEdible: 1
   isFlower: 0
-  isHerb: 1
+  isHerb: 0
   isAPlant: 1
   dialogue: {fileID: 0}
   botanicalDexJournalMapButton: {fileID: 0}

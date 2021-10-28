@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -29,7 +30,7 @@ public class seedVaultManagement : MonoBehaviour
     #region Public
     public dialogueManagement referenceToDialogueManagement;
 
-    public GameObject dialogueUserInterface;
+    public GameObject dialogueUserInterface, epilogueDialogueUserInterface;
 
     public Image fadePanel;
     #endregion
@@ -41,13 +42,15 @@ public class seedVaultManagement : MonoBehaviour
         setUpQuiz();
     }
 
+    // Duplicate the other dialogue box, move to center and once the quiz dialogue is the previous one, then enable the duplicate box and run that dialogue
+
     void Update()
     {
         if(referenceToDialogueManagement.currentDialogueScript == GetComponent<dialogueScript>())
         {
             hasGoneThroughDialogue = true;
 
-            if(!hasTransitionBeenSetup)
+            if (!hasTransitionBeenSetup)
             {
                 fadePanel.gameObject.SetActive(true);
                 fadePanel.color = new Color(fadePanel.color.r, fadePanel.color.g, fadePanel.color.b, 1f);
@@ -56,15 +59,20 @@ public class seedVaultManagement : MonoBehaviour
                 hasTransitionBeenSetup = true;
             }
 
-            if (referenceToDialogueManagement.atDialogueString == 1) { fadePanel.CrossFadeAlpha(1f, 1f, false); }
-            else if (referenceToDialogueManagement.atDialogueString == 2) 
-            {
-                dialogueUserInterface.transform.GetChild(0).GetComponent<RectTransform>().position = new Vector3(dialogueUserInterface.transform.GetChild(0).GetComponent<RectTransform>().position.x, 279f, dialogueUserInterface.transform.GetChild(0).GetComponent<RectTransform>().position.z);
-                dialogueUserInterface.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+            if (referenceToDialogueManagement.atDialogueString == 1) 
+            { 
+                fadePanel.CrossFadeAlpha(1f, 1f, false);
 
-                dialogueUserInterface.transform.GetChild(1).GetComponent<RectTransform>().offsetMax = new Vector2(dialogueUserInterface.transform.GetChild(1).GetComponent<RectTransform>().offsetMax.x, 50f);
-                dialogueUserInterface.transform.GetChild(1).GetComponent<RectTransform>().offsetMin = new Vector2(dialogueUserInterface.transform.GetChild(1).GetComponent<RectTransform>().offsetMin.x, -50f);
+                GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().dialogueText = epilogueDialogueUserInterface.transform.GetChild(1).GetComponent<TMP_Text>();
+                GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().nameText = epilogueDialogueUserInterface.transform.GetChild(2).GetComponent<TMP_Text>();
             }
+            else if(referenceToDialogueManagement.atDialogueString == 2)
+            {
+                GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().dialogueUserInterface.SetActive(false);
+                GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().dialogueUserInterface = epilogueDialogueUserInterface;
+                GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().dialogueUserInterface.SetActive(true);
+            }
+            else if(referenceToDialogueManagement.atDialogueString == 4) { GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().dialogueText.alignment = TextAlignmentOptions.Midline; }
         }
         else if(referenceToDialogueManagement.currentDialogueScript == null && hasGoneThroughDialogue) { SceneManager.LoadScene(0); }
 
@@ -91,7 +99,7 @@ public class seedVaultManagement : MonoBehaviour
             { 
                 hasQuizBeenCompleted = true;
 
-                GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().displayDialogueUserInterface(GetComponent<dialogueScript>());
+                GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().displayDialogueUserInterface01(GetComponent<dialogueScript>());
                 GetComponent<interactable>().dialogue = GetComponent<dialogueScript>();
             }
 

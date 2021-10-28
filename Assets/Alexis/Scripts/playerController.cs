@@ -200,6 +200,9 @@ public class playerController : MonoBehaviour
             else { animator.SetBool("isRunning", false); animator.SetBool("isWalking", false); }
         }
 
+        if (rb.velocity.x > 5f) { rb.velocity = new Vector2(5f, rb.velocity.y); }
+        else if (rb.velocity.x < -5f) { rb.velocity = new Vector2(-5f, rb.velocity.y); }
+
         if ((groundHit.collider != null && (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Space))) || isJumping) { jump(); }
 
         rb.AddForce(new Vector2(horizontalMovement * movementVelocity, 0f) * Time.fixedDeltaTime, ForceMode2D.Impulse);

@@ -2126,6 +2126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1326273836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1873603686685700319, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
+  m_PrefabInstance: {fileID: 1326273804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1377839214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,6 +2140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1377839216}
+  - component: {fileID: 1377839215}
   - component: {fileID: 1377839217}
   m_Layer: 0
   m_Name: Game Manager
@@ -2143,6 +2149,53 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1377839215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377839214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ccc49ce82422a248939d54d5492b12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementUI: {fileID: 1326273836}
+  achievementList: []
+  miscellaneousAchievements:
+  - hasAchievementBeenAchieved: 0
+    name: "Bon App\xE9tit"
+    description: You just discovered your first edible plant. Chew up!
+  - hasAchievementBeenAchieved: 0
+    name: Inner Peas
+    description: "You discovered 3 edible plants on your journey. Were they delicious?\r"
+  - hasAchievementBeenAchieved: 0
+    name: Vitamin C-eeing the World
+    description: "You\u2019ve discovered 5 edible plants so far. Who knew there were
+      that many?\r"
+  - hasAchievementBeenAchieved: 0
+    name: Early Bloomer
+    description: "I\u2019m glad you\u2019re opening up to new leaves. You just discovered
+      your first flower!"
+  - hasAchievementBeenAchieved: 0
+    name: Rosey Cheeks
+    description: 5 new flowers were added to your botanical dex!
+  - hasAchievementBeenAchieved: 0
+    name: Unbeleafable!
+    description: "Stop and smell the roses; you\u2019ve officially discovered 10
+      new flowers.\r"
+  - hasAchievementBeenAchieved: 0
+    name: Encourage-Mint
+    description: "You\u2019ve stumbled upon your first weed or herb. Can you make
+      that number grow?"
+  - hasAchievementBeenAchieved: 0
+    name: Not Mossing Around
+    description: "You\u2019ve discovered 3 weeds and herbs, so far. You grow, girl!\r"
+  - hasAchievementBeenAchieved: 0
+    name: One More Thyme
+    description: "You\u2019ve discovered 5 weeds and herbs. Soon, you might have
+      to mow your botanical dex!"
 --- !u!4 &1377839216
 Transform:
   m_ObjectHideFlags: 0
@@ -2170,6 +2223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentDialogueScript: {fileID: 0}
+  previousDialogueScript: {fileID: 0}
   charBufferSpeed: 50
   atDialogueString: -1
 --- !u!4 &1559017735 stripped

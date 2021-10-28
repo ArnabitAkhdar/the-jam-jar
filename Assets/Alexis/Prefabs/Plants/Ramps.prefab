@@ -81,9 +81,9 @@ MonoBehaviour:
   triggerDexUpdate: 1
   displayDexJournalAndMapButton: 0
   displayDuringDialogue: 0
-  isEdible: 1
+  isEdible: 0
   isFlower: 0
-  isHerb: 0
+  isHerb: 1
   isAPlant: 1
   dialogue: {fileID: 0}
   botanicalDexJournalMapButton: {fileID: 0}

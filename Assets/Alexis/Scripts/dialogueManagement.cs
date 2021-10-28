@@ -12,7 +12,7 @@ public class dialogueManagement : MonoBehaviour
     #endregion
 
     #region Public
-    public dialogueScript currentDialogueScript;
+    public dialogueScript currentDialogueScript, previousDialogueScript;
 
     public float charBufferSpeed = 0f;
 
@@ -53,6 +53,8 @@ public class dialogueManagement : MonoBehaviour
 
     private void closeDialogueScript(dialogueScript _dialogue)
     {
+        previousDialogueScript = _dialogue;
+
         currentDialogueScript = null;
 
         referenceToUserInterfaceManagement.dialogueUserInterface.SetActive(false);
@@ -86,7 +88,7 @@ public class dialogueManagement : MonoBehaviour
         }
         
         if (!_dialogue.hasResponses) { yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return)); closeDialogueScript(_dialogue); }
-        else { referenceToDialogueResponseHandler.showResponses(_dialogue.responses); }
+        else { if (!referenceToDialogueResponseHandler.hasShownResponses) { referenceToDialogueResponseHandler.showResponses(_dialogue.responses); } }
 
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
     }
