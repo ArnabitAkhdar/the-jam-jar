@@ -1,6 +1,6 @@
 # [Day of Juniper](https://arnabitakhdar.itch.io/day-of-juniper)
 
-![alt text](https://img.itch.zone/aW1nLzcyODUxMjIuanBn/original/txx51A.jpg "Day of Juniper Screenshot")
+![alt text](https://img.itch.zone/aW1nLzczNTM5OTUucG5n/original/rgxxYb.png "Day of Juniper Screenshot")
 
 Our protagonist **Juniper** lives in a **post-apocalyptic world** where there isn't much greenery left and pollution has taken over. On a walk, she **stumbles upon a potato plant** and goes on a **journey to deliver it to a seed bank** where it will be kept safe. Juniper **discovers many more plants** outside the city for the first time in her lifetime, giving her a fresh colorful start. **You can find the link to the submission on** [itch.io - Buddy Up Jam](https://itch.io/jam/buddy-up-jam/rate/1244168).
 
