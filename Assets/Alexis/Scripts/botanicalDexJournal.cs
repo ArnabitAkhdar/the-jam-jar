@@ -75,6 +75,17 @@ public class botanicalDexJournal : MonoBehaviour
                 updateDex(dexEntries[indexCounter].dexNumber);
             }
         }
+        for (int indexCounter = 0; indexCounter < journalEntries.Count; indexCounter++)
+        {
+            if (PlayerPrefs.GetInt("journalEntries" + indexCounter) != 0)
+            {
+                journalEntries[indexCounter].entryCollected = true;
+
+                GameObject.FindGameObjectWithTag("UserInterface").GetComponent<userInterfaceManagement>().updateDexUI(journalEntries[indexCounter].journalEntryNumber);
+
+                updateJournal(journalEntries[indexCounter].journalEntryNumber);
+            }
+        }
     }
 
     public void saveDexJournalInformation()
@@ -83,6 +94,11 @@ public class botanicalDexJournal : MonoBehaviour
         {
             if (!dexEntries[indexCounter].entryCollected) { PlayerPrefs.SetInt("dexEntries" + indexCounter, 0); }
             else { PlayerPrefs.SetInt("dexEntries" + indexCounter, 1); }
+        }
+        for (int indexCounter = 0; indexCounter < journalEntries.Count; indexCounter++)
+        {
+            if (!journalEntries[indexCounter].entryCollected) { PlayerPrefs.SetInt("journalEntries" + indexCounter, 0); }
+            else { PlayerPrefs.SetInt("journalEntries" + indexCounter, 1); }
         }
     }
 

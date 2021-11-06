@@ -96,12 +96,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   dexEntries:
   - entryCollected: 0
     dexNumber: 0
@@ -250,6 +244,100 @@ MonoBehaviour:
       will use the seed vaults to regrow what has been lost. I can't wait to see
       you there!\r\n\r\nLove,\r\nYour Dad"
     entryName: First Draft
+  - entryCollected: 0
+    journalEntryNumber: 2
+    entryDescription: 'Summer 24 A.C.
+
+
+      Dear Child,
+
+      You are on your
+      way. You should now be outside of town. All you have to do is cross the plains
+      towards the tallest building of the city. Remember my old office?
+
+
+      Ha,
+      that also reminds of the afternoon walks we took here along the forest and
+      up the mountains. You were so quiet when we moved here. I can''t even imagine
+      what you must have been going through. I was so busy with my own grief, that
+      I forgot how much you needed me. I am sorry I was not there for you. And I
+      am sorry that I took away the little memories you still had of your mother
+      when we moved here. I wish I could turn back time. Take you out on more hikes,
+      show you the world, and teach you how to enjoy the little things again, step
+      by step, just like your mother loved them. She would have been proud, seeing
+      the young woman you have become.
+
+
+      But there is still time. I will make
+      it right.
+
+
+      Love,
+
+      Your Dad'
+    entryName: I'm Sorry
+  - entryCollected: 0
+    journalEntryNumber: 3
+    entryDescription: 'Summer 24 A.C.
+
+
+      Dear Child,
+
+      It is worth than
+      I thought. The bridge has collapsed and the only way into the city is through
+      the sewers below. I hope you remembered and could find the entrance.
+
+
+      I
+      don''t know what I was thinking taking you down here with me. This was a great
+      place to research the possibilities of growing plants underground. Study their
+      resilience and the best strains. You were so excited when you could help me
+      tend to the plants. I still chuckle when I think about your first instinct
+      to just try to eat everything. I hope you still kept your curiosity. I was
+      disappointed when you told me you are going to study floral design. You could
+      have done so much more with your life.
+
+
+      But I get it now, you wanted
+      to be close to her. Be like her. And I am sure you are amazing at it. I hope
+      one day we can brighten our kitchen table with a bouquet made by you out of
+      flowers we planted together.
+
+
+      Love,
+
+      Your Dad'
+    entryName: Be Careful
+  - entryCollected: 0
+    journalEntryNumber: 4
+    entryDescription: 'Summer 24 A.C.
+
+
+      Dear Child,
+
+      The Seed Vault is
+      just ahead. But the way through the courtyard is blocked..
+
+
+      Remember
+      the time we got stuck in this elevator? It was one of those days where I decided
+      to come into the office instead of spending time at home with you. We had the
+      great power outage. A first sign of the upcoming disaster but as with so many
+      things back then we decided to ignore the warnings.
+
+
+      You were so scared
+      but I explained to you why elevators are safe even if there is no power. It
+      took them almost 4 hours to get us out of there. But what I remember the most
+      is, that it was the first time you opened up to me. You said " Daddy, I know
+      you are trying your best. I love you."
+
+
+      I love you, too, kiddo!
+
+      Your
+      Dad'
+    entryName: Final Note
 --- !u!70 &3641432427387699027
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

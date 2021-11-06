@@ -92,6 +92,8 @@ public class playerController : MonoBehaviour
         }
     
         if(transform.position.y <= -50f) { SceneManager.LoadScene(1); }
+
+        Debug.DrawRay(transform.position, Vector3.down, Color.green);
     }
 
     private void jump()
@@ -175,7 +177,12 @@ public class playerController : MonoBehaviour
             else { rb.drag = 0f; }
         }
 
-        groundHit = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, layerMask);
+        if (SceneManager.GetActiveScene().name != "End - Seed Vault" && SceneManager.GetActiveScene().name != "Level 4 - Rusty Building") { groundHit = Physics2D.Raycast(transform.position, Vector2.down, /*1.5f*/ .5f, layerMask); }
+        else 
+        {
+            if (SceneManager.GetActiveScene().name == "End - Seed Vault") { groundHit = Physics2D.Raycast(transform.position, Vector2.down, 1f, layerMask); }
+            else if (SceneManager.GetActiveScene().name == "Level 4 - Rusty Building") { groundHit = Physics2D.Raycast(transform.position, Vector2.down, .75f, layerMask); }
+        }
 
         if (!isJumping)
         {
@@ -226,8 +233,4 @@ public class playerController : MonoBehaviour
     }
 
     public void updateVelocityY(int _velocityY) { velocity.y = _velocityY; }
-
-    // User Interface Functions
-    // public void updateGravityMultiplier(TMP_InputField _inputField) { if (_inputField.text != "" && float.Parse(_inputField.text) >= 0f && float.Parse(_inputField.text) <= 1f) { gravityMultiplier = float.Parse(_inputField.text); } }
-    public void updateMovementSpeed(TMP_InputField _inputField) { if (_inputField.text != "" && int.Parse(_inputField.text) >= 0 && int.Parse(_inputField.text) <= 16) { movementSpeed = int.Parse(_inputField.text); } }
 }

@@ -1019,10 +1019,8 @@ EdgeCollider2D:
   - {x: -0.15837093, y: -5.317069}
   - {x: 0.3786881, y: -4.47818}
   - {x: 0.5983086, y: -4.393717}
-  - {x: 1.4684831, y: -4.3932614}
-  - {x: 2.2097402, y: -4.5920944}
-  - {x: 2.830182, y: -4.7387714}
-  - {x: 3.2857802, y: -4.8856635}
+  - {x: 1.4763929, y: -4.355301}
+  - {x: 3.07158, y: -4.7576056}
   - {x: 4.8769975, y: -4.8026714}
   - {x: 4.957779, y: -4.808893}
   - {x: 5.525121, y: -4.764507}
@@ -1208,43 +1206,43 @@ PrefabInstance:
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[0]
       value: 
-      objectReference: {fileID: 1326273814}
+      objectReference: {fileID: 1326273808}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[1]
       value: 
-      objectReference: {fileID: 1326273813}
+      objectReference: {fileID: 1326273807}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[2]
       value: 
-      objectReference: {fileID: 1326273812}
+      objectReference: {fileID: 1326273806}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[3]
       value: 
-      objectReference: {fileID: 1326273811}
+      objectReference: {fileID: 1326273805}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[4]
       value: 
-      objectReference: {fileID: 1326273810}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[5]
       value: 
-      objectReference: {fileID: 1326273809}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[6]
       value: 
-      objectReference: {fileID: 1326273808}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[7]
       value: 
-      objectReference: {fileID: 1326273807}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[8]
       value: 
-      objectReference: {fileID: 1326273806}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[9]
       value: 
-      objectReference: {fileID: 1326273805}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: dexEntries.Array.data[4].entryDescription
       value: Storksbill, also called Heronsbill, any of several flowering plants
@@ -1787,7 +1785,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
 --- !u!114 &1326273805 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108584399465887, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
+  m_CorrespondingSourceObject: {fileID: 113625096465091544, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
   m_PrefabInstance: {fileID: 1326273804}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1798,7 +1796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1326273806 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108586389371185, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
+  m_CorrespondingSourceObject: {fileID: 250292871732486851, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
   m_PrefabInstance: {fileID: 1326273804}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1809,7 +1807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1326273807 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108586327257125, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2291640630214812885, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
   m_PrefabInstance: {fileID: 1326273804}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1820,73 +1818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1326273808 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585887278912, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1326273804}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1326273809 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585297626684, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1326273804}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1326273810 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585305159346, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1326273804}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1326273811 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585427590976, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1326273804}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1326273812 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108584795615515, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1326273804}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1326273813 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585123295427, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1326273804}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1326273814 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585232132550, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2742592105233777971, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
   m_PrefabInstance: {fileID: 1326273804}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -2364,6 +2296,127 @@ Transform:
   m_Father: {fileID: 664036785}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1822885575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1822885576}
+  - component: {fileID: 1822885578}
+  - component: {fileID: 1822885577}
+  m_Layer: 9
+  m_Name: Journal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1822885576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822885575}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.934, y: 0.25, z: 0}
+  m_LocalScale: {x: 0.0625, y: 0.0625, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2144640539}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1822885577
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822885575}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 03022ab15d2998a4cb8988bf92156554, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.39, y: 9.39}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1822885578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822885575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: debfad61cf260c14f8ce0cb3cd8be703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canPickUp: 1
+  canInspect: 0
+  canTalkTo: 0
+  canUse: 0
+  triggerDialogue: 0
+  triggerMapUpdate: 0
+  triggerJournalUpdate: 1
+  triggerDexUpdate: 0
+  displayDexJournalAndMapButton: 0
+  displayDuringDialogue: 0
+  isEdible: 0
+  isFlower: 0
+  isHerb: 0
+  isAPlant: 0
+  dialogue: {fileID: 0}
+  botanicalDexJournalMapButton: {fileID: 0}
+  referenceToObjectivesLevelOne: {fileID: 0}
+  atDialogueString: -1
+  selectedLevel: -1
+  triggerDialogueBasedOnInteractableCollected: 0
+  itemAcquiredDialogue: {fileID: 0}
+  itemUnacquiredDialogue: {fileID: 0}
+  dexEntryNumber: 0
+  journalEntryNumber: 4
+  item: {fileID: 0}
 --- !u!1 &2144640538
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,6 +2447,7 @@ Transform:
   - {fileID: 153405632}
   - {fileID: 1559017735}
   - {fileID: 1084600795}
+  - {fileID: 1822885576}
   - {fileID: 1147706586}
   m_Father: {fileID: 428598218}
   m_RootOrder: 1
@@ -2578,7 +2632,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3550116697708378649, guid: 80e6f48306c375240b7a7cdb5f2d7da7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3550116697708378649, guid: 80e6f48306c375240b7a7cdb5f2d7da7, type: 3}
       propertyPath: m_LocalPosition.x

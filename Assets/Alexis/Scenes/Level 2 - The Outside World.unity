@@ -513,15 +513,16 @@ EdgeCollider2D:
   - {x: -22.222504, y: -5.7436323}
   - {x: -16.697304, y: -6.2900124}
   - {x: -16.460932, y: -4.9771566}
-  - {x: -8.572568, y: -5.5462923}
+  - {x: -9.672387, y: -5.463806}
   - {x: -7.9801044, y: -5.9255886}
-  - {x: -1.0498607, y: -6.3333654}
-  - {x: 0.025734663, y: -5.685979}
-  - {x: 7.9071865, y: -5.483634}
-  - {x: 8.616993, y: -6.0315332}
-  - {x: 13.535474, y: -5.0939093}
+  - {x: -1.3169508, y: -6.048335}
+  - {x: 1.3203608, y: -5.558552}
+  - {x: 6.284062, y: -5.5151253}
+  - {x: 6.5486407, y: -5.5355263}
+  - {x: 9.107726, y: -5.9211187}
+  - {x: 13.276632, y: -5.2336845}
   - {x: 14.653637, y: -5.213254}
-  - {x: 24.74277, y: -4.938205}
+  - {x: 24.19758, y: -4.938205}
   - {x: 24.96568, y: -5.0632696}
   - {x: 27.145958, y: -4.926141}
   - {x: 28.041515, y: -5.0362043}
@@ -674,43 +675,43 @@ PrefabInstance:
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[0]
       value: 
-      objectReference: {fileID: 1982143946}
+      objectReference: {fileID: 1982143940}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[1]
       value: 
-      objectReference: {fileID: 1982143945}
+      objectReference: {fileID: 1982143939}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[2]
       value: 
-      objectReference: {fileID: 1982143944}
+      objectReference: {fileID: 1982143938}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[3]
       value: 
-      objectReference: {fileID: 1982143943}
+      objectReference: {fileID: 1982143937}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[4]
       value: 
-      objectReference: {fileID: 1982143942}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[5]
       value: 
-      objectReference: {fileID: 1982143941}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[6]
       value: 
-      objectReference: {fileID: 1982143940}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[7]
       value: 
-      objectReference: {fileID: 1982143939}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[8]
       value: 
-      objectReference: {fileID: 1982143938}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: journalEntryButtons.Array.data[9]
       value: 
-      objectReference: {fileID: 1982143937}
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: dexEntries.Array.data[0].entryDescription
       value: (Malus domestica), fruit of the domesticated tree Malus domestica (family
@@ -733,10 +734,46 @@ PrefabInstance:
         of flowering plants of the iris family (Iridaceae) native from Mexico to
         Chile.
       objectReference: {fileID: 0}
+    - target: {fileID: 3641432427387699024, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
+      propertyPath: journalEntries.Array.data[1].entryDescription
+      value: 'Summer 24 A.C.
+
+
+        Dear Child,
+
+        You are on your way.
+        You should now be outside of town. All you have to do is cross the plains
+        towards the tallest building of the city. Remember my old office?
+
+
+        Ha,
+        that also reminds of the afternoon walks we took here along the forest and
+        up the mountains. You were so quiet when we moved here. I can''t even imagine
+        what you must have been going through. I was so busy with my own grief, that
+        I forgot how much you needed me. I am sorry I was not there for you. And
+        I am sorry that I took away the little memories you still had of your mother
+        when we moved here. I wish I could turn back time. Show you the world, teach
+        you how to enjoy the little things again, step by step, just like your mother
+        loved them. She would have been proud, seeing the young woman you have become.
+
+
+        But
+        there is still time. I will make it right.
+
+
+        Love,
+
+        Your
+        Dad'
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699026, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 293769688}
+    - target: {fileID: 3641432427387699026, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
+      propertyPath: jumpHeight
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3641432427387699026, guid: 99028be3bc8eb25409eeacadd2b56e7c, type: 3}
       propertyPath: cameraBoundX.x
       value: -2.4
@@ -1810,7 +1847,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
 --- !u!114 &1982143937 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108584399465887, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
+  m_CorrespondingSourceObject: {fileID: 113625096465091544, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
   m_PrefabInstance: {fileID: 1982143936}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1821,7 +1858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1982143938 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108586389371185, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
+  m_CorrespondingSourceObject: {fileID: 250292871732486851, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
   m_PrefabInstance: {fileID: 1982143936}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1832,7 +1869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1982143939 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108586327257125, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2291640630214812885, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
   m_PrefabInstance: {fileID: 1982143936}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1843,73 +1880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1982143940 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585887278912, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1982143936}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1982143941 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585297626684, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1982143936}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1982143942 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585305159346, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1982143936}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1982143943 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585427590976, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1982143936}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1982143944 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108584795615515, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1982143936}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1982143945 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585123295427, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
-  m_PrefabInstance: {fileID: 1982143936}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1982143946 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3155108585232132550, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2742592105233777971, guid: e44e8cfba24b8d44d8f955cbae159fac, type: 3}
   m_PrefabInstance: {fileID: 1982143936}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -2380,7 +2351,7 @@ MonoBehaviour:
   itemAcquiredDialogue: {fileID: 0}
   itemUnacquiredDialogue: {fileID: 0}
   dexEntryNumber: 0
-  journalEntryNumber: 1
+  journalEntryNumber: 2
   item: {fileID: 0}
 --- !u!1001 &647876422108532445
 PrefabInstance:
